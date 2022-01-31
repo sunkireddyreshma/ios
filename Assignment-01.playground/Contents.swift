@@ -13,13 +13,13 @@ let maxWeight : Int = 130
 // 1.c) Print  "Your max weight is xxxx pounds", replacing the xxxx with the value of maxWeight. Use String interpolation
 print("Your max weight is \(maxWeight)")
 
-print("------------------------------")
+print("-------------------------------")
 
 // 1.d) Assign 7,300,678,987 to an var largeInt and print it. Use the swift ability to write large numbers so that they are easy to be read. Refer to Tuples worksheet (problem 4)
 var largeInt = 7300678987
 print(largeInt)
 
-print("------------------------------")
+print("-------------------------------")
 
 
 // 1.e) Write Swift source code to print the below in one single print statement
@@ -32,10 +32,9 @@ print("""
       Welcome to Swift Programming..!
       """)
 
-print("-----------------------------")
-
 //**************** END OF QUESTION 1 ****************
 
+print("-------------------------------")
 
 
 //**************** QUESTION 2 ****************
@@ -53,6 +52,7 @@ var y2 = 25.0
 //y2 = x2
 
 //**************** END OF QUESTION 2 ****************
+
 
 
 
@@ -85,19 +85,25 @@ else{
     print("outside")
 }
 
-print("------------------------------")
-
-
 //**************** END OF QUESTION 3 ****************
 
-
+print("-------------------------------")
 
 //**************** QUESTION 4 ****************
 //using loops
 //4.a) Print the numbers 1 to N in alternative order, one number from the left side (starting with one) and one number from the right side (starting from N down to 1)
 //Decalare var N = 10
 //expected output is 1 10 2 9 3 8 4 7 5 6
+var N = 10
 
+for i in stride(from: 1, to: 6, by: 1)
+{
+    print(i, terminator: " ")
+    print(N, terminator: " ")
+     N = N - 1
+}
+print("")
+print("-------------------------------")
 
 //4.b) If a number C is given, then print the following rhombus
 //declare C = 5
@@ -113,27 +119,85 @@ print("------------------------------")
 //   ***
 //    *
 
+let H = 5
+let W = H * 2 - 1
+
+for Number in 1...H {
+    let stars = 2 * Number - 1
+    var point = ""
+    let spaces = (W - stars) / 2
+    if spaces > 0 {
+        point = String(repeating: " ", count: spaces)
+    }
+
+    point += String(repeating: "*", count: stars)
+    print (point)
+    
+}
+
+var i = 4
+while i >= 1
+{
+    print(" " + String.init(repeating: " ", count: 4-i) + String.init(repeating: "*", count: 2*i - 1))
+    i = i-1
+}
+
 
 //**************** END OF QUESTION 4 ****************
 
-
+print("-------------------------------")
 
 //**************** QUESTION 5 ****************
 // Using Strings
 //5.a) Replace the character "a" in original string with * and print the new String
 var original = "This String Contains a very few a's"
 
+var StringReplacedOccurences = original.replacingOccurrences(of: "a",
+                                                                   with: "*")
+
+print(StringReplacedOccurences)
+
+print("-------------------------------")
+
 //5.b) Declare 2 Strings str1 and str2 as "Hello, Swift!" and "Hello, World!" respectively and compare them
 // If the 2 Strings are equal, print str1 and str2 are equal, else str1 and str2 are not equal.
+let str1 = "Hello, Swift!"
+let str2 = "Hello, World!"
 
-   
+if(str1 == str2)
+{
+    print("\(str1) and \(str2) are equal")
+}
+else{
+    print("\(str1) and \(str2) are not equal")
+}
+
+   print("-------------------------------")
+
 //5.c) Declare a String Swift and print them in the reverse order.
+let str = "Swift"
+var result = String(str.reversed())
+print(result)
+
+print("-------------------------------")
 
 
 //5.d) Write a Swift code  to check if the first or last characters are 'a' of a given string, return the given string without those 'a' characters in the first and last, otherwise return the given string.
  //declare var myString1 = "ababa"
  //expected output bab
+var myString1 = "ababa"
+if(myString1.first == "a" && myString1.last == "a")
+{
+    myString1.remove(at: myString1.startIndex)
+    myString1.remove(at: myString1.index(before: myString1.endIndex))
+    print(myString1)
+}
+else
+{
+   print(myString1)
+}
 //**************** END OF QUESTION 5 ****************
+print("-------------------------------")
 
  
 
