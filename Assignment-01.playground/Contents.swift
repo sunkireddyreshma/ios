@@ -95,15 +95,13 @@ print("-------------------------------")
 //Decalare var N = 10
 //expected output is 1 10 2 9 3 8 4 7 5 6
 var N = 10
-
-for i in stride(from: 1, to: 6, by: 1)
+for i in  1 ... 5
 {
-    print(i, terminator: " ")
-    print(N, terminator: " ")
-     N = N - 1
+    print("\(i)","\(N)",terminator:" ")
+    N -= 1
 }
 print("")
-print("-------------------------------")
+print("-----------------------------")
 
 //4.b) If a number C is given, then print the following rhombus
 //declare C = 5
@@ -119,30 +117,29 @@ print("-------------------------------")
 //   ***
 //    *
 
-let H = 5
-let W = H * 2 - 1
-
-for Number in 1...H {
-    let stars = 2 * Number - 1
-    var point = ""
-    let spaces = (W - stars) / 2
-    if spaces > 0 {
-        point = String(repeating: " ", count: spaces)
+let C = 5
+for i in 1...C{
+    for j in 0..<(C-i){
+        print(" ", terminator: "")
     }
-
-    point += String(repeating: "*", count: stars)
-    print (point)
-    
+    for j in 1...2*i-1{
+        print("*", terminator: "")
+    }
+    print("")
 }
+if(C>1){
+    for i in 2...C{
+        var k = C-i+1
+        for j in 0..<(C-k){
+            print(" ", terminator: "")
+        }
+        for j in 1...2*k-1{
+            print("*", terminator: "")
+        }
+        print("")
+      }
 
-var i = 4
-while i >= 1
-{
-    print(" " + String.init(repeating: " ", count: 4-i) + String.init(repeating: "*", count: 2*i - 1))
-    i = i-1
 }
-
-
 //**************** END OF QUESTION 4 ****************
 
 print("-------------------------------")
@@ -197,7 +194,7 @@ else
    print(myString1)
 }
 //**************** END OF QUESTION 5 ****************
-print("-------------------------------")
+
 
  
 
